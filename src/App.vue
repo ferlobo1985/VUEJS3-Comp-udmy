@@ -1,21 +1,21 @@
 <template>
-    <div>{{ name }}</div>
+    <div>
+        <app-header></app-header>
+        <div>
+            content
+        </div>
+        <app-footer></app-footer>
+    </div>
 </template>
 
 <script>
+    import Footer from './components/header_footer/Footer.vue';
+
     export default {
-        data(){
-            return {
-                name:'Francis'
-            }
+        components:{
+            'appFooter': Footer
         }
+       
     }
 </script>
-
-<style>
-    div {
-        color:red
-    }
-</style>
-
 
