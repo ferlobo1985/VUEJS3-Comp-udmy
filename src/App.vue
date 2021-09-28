@@ -13,9 +13,11 @@
 
     export default {
         components:{
-            'appFooter': Footer
+            'app-Footer': Footer
         }
        
     }
 </script>
+
+
 
