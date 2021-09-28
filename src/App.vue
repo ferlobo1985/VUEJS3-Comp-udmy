@@ -28,7 +28,7 @@
             return {
                 name: 'Rocket',
                 lastname:'Jones',
-                age:28,
+                age:'28',
                 parents:{
                     father:'Mario',
                     mother:'Martha'

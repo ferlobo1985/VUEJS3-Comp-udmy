@@ -30,11 +30,34 @@
 <script>
     export default {
         props:{
-            alsoKnowAs:String,
-            userLastname:String,
-            userAge:Number,
+            alsoKnowAs:{
+                type:String,
+                required:true,
+                default: 'N/A'
+            },
+            userLastname:{ 
+                type:String,
+                // validator(value){
+                //     if(value === 'Jones'){
+                //         return true
+                //     }else{
+                //         return false
+                //     }
+                // }
+            },
+            userAge:[Number,String],
             userParents: Object,
             updateAge: Function
+        },
+        emits:{
+            'update-lastname':function(lastname){
+                if(lastname === 'Michelson'){
+                    return true;
+                } else {
+                    alert('Wrong value dev !!')
+                    return false
+                }
+            }
         },
         data(){
             return {
@@ -43,7 +66,7 @@
         },
         methods:{
             updateLastname(){
-                this.$emit('update-lastname','Michelson')
+                this.$emit('update-lastname','Michelsossn')
             },
             sayHello(){
                 this.$emit('say-hello')
