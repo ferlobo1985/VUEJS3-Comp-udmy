@@ -2,7 +2,7 @@
     <div>
         <h1>Welcome to the cars</h1>
         <div>
-            <comp-list :cars="cars"></comp-list>
+            <comp-list></comp-list>
         </div>
     </div>
 </template>

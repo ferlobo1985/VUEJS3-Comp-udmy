@@ -5,12 +5,13 @@
                 <span>{{ car.brand}}</span>:{{car.model }}
             </li>
         </ul>
+        <button @click="changeCar">Change car</button>
     </div>
 </template>
 
 <script>
 export default {
-    props:['cars'],
+    inject:['cars','changeCar'],
     data(){
         return {
 
