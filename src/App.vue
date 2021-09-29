@@ -2,51 +2,32 @@
     <div>
         <app-header></app-header>
             <div class="container">
-                <comp-user-profile 
-                    :alsoKnowAs="name"
-                    :userLastname="lastname"
-                    :userAge="age"
-                    :userParents="parents"
-                    @update-lastname="lastname = $event"
-                    @say-hello="alertHello"
-                    :updateAge="updateAge"
-                ></comp-user-profile>
-                <button @click="updateName">Update name</button>
+                <comp-cars :cars="cars"></comp-cars>
             </div>
         <app-footer></app-footer>
     </div>
 </template>
 
 <script>
-    import compUserProfile from './components/User/profile.vue';
+    import compCars from './components/Cars';
 
     export default {
         components:{
-            compUserProfile
+            compCars
         },
         data(){
             return {
-                name: 'Rocket',
-                lastname:'Jones',
-                age:'28',
-                parents:{
-                    father:'Mario',
-                    mother:'Martha'
-                }
+                cars:[
+                    {model:'F9',brand:'Ferrari'},
+                    {model:'911',brand:'Porsche'},
+                    {model:'Tipo',brand:'Fiat'}
+                ]
             }
         },
         methods:{
-            updateName(){
-                this.name ='Mike'
-            },
-            alertHello(){
-                alert('HELLO!!')
-            },
-            updateAge(value){
-                this.age = value
-            }
+         
         }
- 
+
     }
 </script>
 
