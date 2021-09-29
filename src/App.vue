@@ -3,14 +3,13 @@
         <app-header></app-header>
             <div class="container">
                 <comp-cars></comp-cars>
-                <!-- <h3>Parent</h3>
-                <ul>
-                    <li v-for="car in cars" :key="car.model">
-                        <span>{{ car.brand}}</span>:{{car.model }}
-                    </li>
-                </ul>
-
-                <button @click="changeCar">Change car</button> -->
+                <comp-brands>
+                    <ul>
+                        <li v-for="(brand,index) in brands" :key="index">
+                            {{ brand }}
+                        </li>
+                    </ul>
+                </comp-brands>
             </div>
         <app-footer></app-footer>
     </div>
@@ -18,13 +17,16 @@
 
 <script>
     import compCars from './components/Cars';
+    import compBrands from './components/Cars/brand.vue';
 
     export default {
         components:{
-            compCars
+            compCars,
+            compBrands
         },
         data(){
             return {
+                brands:['Mazda','Honda','Renault'],
                 cars:[
                     {model:'F9',brand:'Ferrari'},
                     {model:'911',brand:'Porsche'},
@@ -59,5 +61,6 @@
         box-sizing: border-box;
         padding: 20px;
     }
+
 </style>
 
