@@ -4,11 +4,18 @@
             <div class="container">
                 <comp-cars></comp-cars>
                 <comp-brands>
-                    <ul>
-                        <li v-for="(brand,index) in brands" :key="index">
-                            {{ brand }}
-                        </li>
-                    </ul>
+                    <div>Content at the top</div>
+                    <template v-slot:brands>
+                        <ul>
+                            <li v-for="(brand,index) in brands" :key="index">
+                                {{ brand }}
+                            </li>
+                        </ul>
+                    </template>
+                    <template v-slot:other>
+                        <div>Some other content</div>
+                    </template>
+                    <strong>Default slot</strong>
                 </comp-brands>
             </div>
         <app-footer></app-footer>
