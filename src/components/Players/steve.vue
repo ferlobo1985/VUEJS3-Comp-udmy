@@ -3,7 +3,6 @@
     <teleport to="#dialog_here">
         <comp-modal></comp-modal>
     </teleport>
-
 </template>
 
 <script>
